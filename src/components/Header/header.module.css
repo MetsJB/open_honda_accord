@@ -1,0 +1,29 @@
+.header {
+  position: relative;
+  padding: 20px 0 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-primary-secondary);
+  img {
+    width: 30px;
+    height: 30px;
+  }
+}
+.header_anchor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 150px;
+  gap: 45px;
+  color: var(--color-text);
+  a {
+    cursor: pointer;
+    transition: color;
+    transition-delay: 0.1s;
+    transition-duration: 0.25s;
+  }
+  a:hover {
+    color: var(--color-text-bg);
+  }
+}

@@ -1,0 +1,36 @@
+:root {
+  --color-primary: #525d61;
+  --color-primary-secondary: #282c2e;
+  --color-main: #7a7e56;
+  --color-additional: #7e5a56;
+  --color-text: #feffff;
+  --color-text-gold: #e68d37;
+  --color-text-bg: #3773f4;
+}
+/* #fcc289 */
+@font-face {
+  font-family: "TTFirsNeue-Regular";
+  src: url("../font/ttfirsneue-regular.eot"); /* IE 9 Compatibility Mode */
+  src: url("../font/ttfirsneue-regular.eot?#iefix") format("embedded-opentype"),
+    /* IE < 9 */ url("../font/ttfirsneue-regular.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("../font/ttfirsneue-regular.woff")
+      format("woff"),
+    /* Firefox >= 3.6, any other modern browser */
+      url("../font/ttfirsneue-regular.ttf") format("truetype"),
+    /* Safari, Android, iOS */
+      url("../font/ttfirsneue-regular.svg#ttfirsneue-regular") format("svg"); /* Chrome < 4, Legacy iOS */
+}
+* {
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; */
+}
+
+body {
+  width: 100%;
+  margin: 0 auto;
+  height: 100vh;
+  background: linear-gradient(90deg, #a7b5c1,#aab4ce,#6e7da1,#445169);;
+  /* background: linear-gradient(90deg, #a79f9b,#a8b4c4,#8092aa); */
+  font-family: "TTFirsNeue-Regular";
+}

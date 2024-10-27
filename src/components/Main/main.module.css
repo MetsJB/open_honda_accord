@@ -1,0 +1,221 @@
+.main {
+  position: relative;
+  width: 99vw;
+  will-change: auto;
+}
+.accord {
+  background-image: url("../../../public/images/accord.jpg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  width: 100vw;
+  height: 850px;
+  display: flex;
+  margin-bottom: 70px;
+}
+.h1 {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  top: 120px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: var(--color-text);
+  font-size: 60px;
+}
+.ul {
+  color: var(--color-text);
+  max-width: 1000px;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 70px;
+  text-decoration: none;
+  list-style-type: none;
+  display: grid;
+  row-gap: 80px;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  justify-content: start;
+  align-items: start;
+  align-content: start;
+  margin-bottom: 70px;
+  a {
+    cursor: pointer;
+    border: 2px solid #6d7575;
+    border-radius: 8px;
+    width: 400px;
+    height: 250px;
+    font-size: 25px;
+  }
+  a:hover {
+    transform: scale(1.1);
+  }
+  a img {
+    transition: all 0.125s ease-in-out;
+  }
+  a:hover img {
+    transform: scale(1.05);
+  }
+}
+.description {
+  max-width: 1200px;
+  color: var(--color-text);
+  margin: 0 auto;
+  margin-bottom: 70px;
+  padding: 0 70px;
+}
+.layers {
+  position: relative;
+  width: 99vw;
+  min-height: 860px;
+  overflow: hidden;
+}
+.layers__container {
+  position: absolute;
+  top: -40px;
+  width: 100vw;
+  min-height: 900px;
+  overflow: hidden;
+  scale: 0.9998;
+}
+.layers__item {
+  width: 100vw;
+  min-height: 900px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  will-change: transform;
+}
+.layer_1 {
+  background-image: url("../../../public/images/layer-1.png");
+  position: absolute;
+  z-index: -1;
+  will-change: transform;
+}
+.layer_2 {
+  background-image: url("../../../public/images/layer-2.png");
+  position: absolute;
+  z-index: 1;
+}
+.layer_3 {
+  background-image: url("../../../public/images/layer-3.png");
+  position: absolute;
+  z-index: 2;
+  will-change: animation;
+  animation-name: car;
+  animation-delay: 0.5s;
+  animation-duration: 4.5s;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes car {
+  from {
+    transform: translateX(-5px);
+    scale: 1.02;
+  }
+  to {
+    transform: translateX(5px);
+  }
+}
+.photo {
+  width: 400px;
+  height: 250px;
+  color: black;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--color-text);
+}
+.photo_1 {
+  background-image: url("../../../public/images/БФдвигатель.png");
+}
+.photo_2 {
+  background-image: url("../../../public/images/БФкузов.png");
+}
+.photo_3 {
+  background-image: url("../../../public/images/БФподвеска.png");
+}
+.photo_4 {
+  background-image: url("../../../public/images/БФсалон.png");
+  width: 455px;
+  height: 290px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.item {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+  background-color: rgba(255, 255, 255, 0.05);
+  background-image: radial-gradient(ellipse, #c6c5c5, transparent);
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  transition: all 0.5s ease-in-out;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.paragraph {
+  color: #ffffff;
+  border: 5px solid #ccc7c7;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 45px;
+  font-weight: 500;
+  position: absolute;
+  opacity: 0;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.item > p {
+  transition: all 0.5s ease-in-out;
+}
+.item:hover > p {
+  transform: translate(-50%, -50%) scale(1.2);
+  opacity: 1;
+}
+.item > div {
+  transition: all 0.5s ease-in-out;
+}
+.item:hover > div {
+  filter: blur(3px);
+  transform: scale(0.88);
+}
+.item_4:hover > div {
+  filter: blur(2px);
+  transform: translate(-50%, -50%) scale(0.88);
+}
+.item::before {
+  background-image: radial-gradient(ellipse, #2584ff, transparent);
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+}
+.item:hover::before {
+  opacity: 1;
+}
+.text {
+  font-size: 18px;
+  color: black;
+}
+.item_1 {
+}
+.item_2 {
+}
+.item_3 {
+}
+.item_4 {
+}
