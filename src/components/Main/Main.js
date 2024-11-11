@@ -8,14 +8,27 @@ const Main = () => {
   gsap.registerPlugin(ScrollTrigger)
   useLayoutEffect(() => {
     gsap.fromTo(
+      ".nodes",
+      { opacity: 0 },
+      {
+        opacity: 1,
+        scrollTrigger: {
+          trigger: ".nodes",
+          start: "-50% 90%",
+          end: "top 15%",
+          scrub: true,
+        },
+      }
+    )
+    gsap.fromTo(
       `.${styles.text}`,
       { opacity: 0 },
       {
         opacity: 1,
         scrollTrigger: {
           trigger: `.${styles.text}`,
-          start: "top 95%",
-          end: "bottom 85%",
+          start: "top 98%",
+          end: "bottom 88%",
           scrub: true,
         },
       }
@@ -103,24 +116,27 @@ const Main = () => {
           </div>
         </div>
       </section>
-      <ul className={styles.ul}>
-        <a className={`${styles.item_1} ${styles.item}`}>
-          <p className={styles.paragraph}>двигатель</p>
-          <div className={`${styles.photo_1} ${styles.photo}`}></div>
-        </a>
-        <a className={`${styles.item_2} ${styles.item}`}>
-          <p className={styles.paragraph}>кузов</p>
-          <div className={`${styles.photo_2} ${styles.photo}`}></div>
-        </a>
-        <a className={`${styles.item_3} ${styles.item}`}>
-          <p className={styles.paragraph}>подвеска</p>
-          <div className={`${styles.photo_3} ${styles.photo}`}></div>
-        </a>
-        <a className={`${styles.item_4} ${styles.item}`}>
-          <p className={styles.paragraph}>салон</p>
-          <div className={`${styles.photo_4} ${styles.photo}`}></div>
-        </a>
-      </ul>
+      <div className={styles.nodes}>
+        <h2 className="nodes">Узлы и агрегаты</h2>
+        <ul className={styles.ul}>
+          <a className={`${styles.item_1} ${styles.item}`}>
+            <div className={`${styles.photo_1} ${styles.photo}`}></div>
+            <p className={styles.paragraph}>двигатель</p>
+          </a>
+          <a className={`${styles.item_2} ${styles.item}`}>
+            <div className={`${styles.photo_2} ${styles.photo}`}></div>
+            <p className={styles.paragraph}>кузов</p>
+          </a>
+          <a className={`${styles.item_3} ${styles.item}`}>
+            <div className={`${styles.photo_3} ${styles.photo}`}></div>
+            <p className={styles.paragraph}>подвеска</p>
+          </a>
+          <a className={`${styles.item_4} ${styles.item}`}>
+            <div className={`${styles.photo_4} ${styles.photo}`}></div>
+            <p className={styles.paragraph}>салон</p>
+          </a>
+        </ul>
+      </div>
       <div className={styles.description}>
         <p className={styles.text}>
           Honda Accord- легендарная модель с многолетней историей. У нового

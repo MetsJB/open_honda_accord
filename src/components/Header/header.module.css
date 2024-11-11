@@ -16,14 +16,61 @@
   align-items: center;
   margin-left: 150px;
   gap: 45px;
-  color: var(--color-text);
-  a {
+
+  a,
+  div {
+    list-style: none;
+    text-decoration: none;
+    position: relative;
     cursor: pointer;
     transition: color;
     transition-delay: 0.1s;
     transition-duration: 0.25s;
+    color: var(--color-text);
   }
-  a:hover {
+  a:hover,
+  div:hover {
     color: var(--color-text-bg);
   }
+}
+
+.nodes {
+  visibility: hidden;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  left: 0;
+  border: 1px solid white;
+  left: 50%;
+  top: 50px;
+  transform: translateX(-50%);
+  transition: visibility 0.45s .2s;
+  .nodes_anchor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 180px;
+    height: 40px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+}
+.nodes__wrapper {
+  background-color: #3e4447;
+}
+.nodes__wrapper::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -15px;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 15px solid var(--color-text);
+}
+.nodes_trigger:hover > .nodes {
+  visibility: visible;
 }

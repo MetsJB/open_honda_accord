@@ -3,16 +3,6 @@
   width: 99vw;
   will-change: auto;
 }
-.accord {
-  background-image: url("../../../public/images/accord.jpg");
-  background-repeat: no-repeat;
-  background-position: bottom;
-  background-size: cover;
-  width: 100vw;
-  height: 850px;
-  display: flex;
-  margin-bottom: 70px;
-}
 .h1 {
   position: absolute;
   margin-left: auto;
@@ -70,6 +60,7 @@
   width: 99vw;
   min-height: 860px;
   overflow: hidden;
+  box-shadow: 0 8px 20px -3px rgba(145, 145, 145, 0.8);
 }
 .layers__container {
   position: absolute;
@@ -114,7 +105,6 @@
 @keyframes car {
   from {
     transform: translateX(-5px);
-    scale: 1.02;
   }
   to {
     transform: translateX(5px);
@@ -148,9 +138,9 @@
   transform: translate(-50%, -50%);
 }
 .item {
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+  box-shadow: 10px 10px 30px 1px rgba(0, 0, 0, 0.35);
   background-color: rgba(255, 255, 255, 0.05);
-  background-image: radial-gradient(ellipse, #c6c5c5, transparent);
+  background-image: radial-gradient(ellipse, #d0d0d0, transparent);
   overflow: hidden;
   position: relative;
   z-index: 1;
@@ -165,7 +155,7 @@
   border: 5px solid #ccc7c7;
   border-radius: 5px;
   padding: 5px 10px;
-  font-size: 45px;
+  font-size: 30px;
   font-weight: 500;
   position: absolute;
   opacity: 0;
@@ -173,6 +163,14 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+.photo:active ~ .paragraph {
+  transition: background-color 0.03s ease-in-out;
+  background-color: #2584ff;
+}
+.paragraph:active {
+  background-color: #2584ff;
+  transition: background-color 0.03s ease-in-out;
 }
 .item > p {
   transition: all 0.5s ease-in-out;
@@ -209,7 +207,7 @@
 }
 .text {
   font-size: 18px;
-  color: black;
+  color: var(--color-text);
 }
 .item_1 {
 }
@@ -218,4 +216,11 @@
 .item_3 {
 }
 .item_4 {
+}
+.nodes > h2 {
+  color: var(--color-text);
+  font-size: 50px;
+  font-weight: 500;
+  margin-top: 60px;
+  text-align: center;
 }
