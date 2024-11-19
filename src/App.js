@@ -1,7 +1,8 @@
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import Home from "./pages/Home.jsx"
+import Photo from "./pages/Photo.jsx"
+import Engine from "./pages/Engine.jsx"
 import "./App.css"
-import Home from "./pages/Home.js"
-import Photo from "./pages/Photo/Photo.jsx"
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
         <Routes>
           <Route element={<Home />} path="/" />
           <Route element={<Photo />} path="/photo" />
-          {/* <Route element={<Contacts />} path="/contacts" /> */}
+          <Route element={<Engine />} path="/engine" />
         </Routes>
       </BrowserRouter>
     </div>

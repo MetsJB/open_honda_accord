@@ -1,15 +1,14 @@
 import { useState, useEffect, createContext } from "react"
-import Arrows from "./arrows/Arrows"
-import SliderList from "./slideList/SlideList"
-import Slide from "./slideList/slide/Slide"
-import Dots from "./dots/Dots"
+import Arrows from "./Arrows/Arrows"
+import Slide from "./Slide/Slide"
+import Dots from "./Dots/Dots"
 import getImages from "./images"
 import "./Slider.css"
 
 const WIDTH_PAGE = 1000
 const HEIGHT_PAGE = 600
 const AUTOPLAY = true
-const AUTOPLAY_TIME = 3000
+const AUTOPLAY_TIME = 4000
 
 export const SliderContext = createContext()
 
@@ -31,9 +30,13 @@ const Slider = function () {
     const prevItemIndex = slide - 1 < 0 ? items.length - 1 : slide - 1
     const nextItemIndex = (slide + 1) % items.length
 
-    new Image().src = items[slide]
-    new Image().src = items[prevItemIndex]
-    new Image().src = items[nextItemIndex]
+    new Image().src = require(`./../../images/photo_auto/photo${slide + 1}.jpg`)
+    new Image().src = require(`./../../images/photo_auto/photo${
+      prevItemIndex + 1
+    }.jpg`)
+    new Image().src = require(`./../../images/photo_auto/photo${
+      nextItemIndex + 1
+    }.jpg`)
   }
 
   useEffect(() => {
@@ -43,6 +46,7 @@ const Slider = function () {
   }, [slide, items])
 
   const changeSlide = (direction = 1) => {
+    setAnimation(false)
     let slideNumber = 0
 
     if (slide + direction < 0) {
@@ -52,24 +56,42 @@ const Slider = function () {
     }
 
     setSlide(slideNumber)
+
+    const timeout = setTimeout(() => {
+      setAnimation(true)
+    }, 0)
+
+    return () => {
+      clearTimeout(timeout)
+    }
   }
 
   const goToSlide = (number) => {
+    setAnimation(false)
     setSlide(number % items.length)
+
+    const timeout = setTimeout(() => {
+      setAnimation(true)
+    }, 0)
+
+    return () => {
+      clearTimeout(timeout)
+    }
   }
 
   useEffect(() => {
     if (!AUTOPLAY) return
 
-    const interval = setInterval(() => {
-      changeSlide(1)
-    }, AUTOPLAY_TIME)
+    if (items.length) {
+      const interval = setInterval(() => {
+        changeSlide(1)
+      }, AUTOPLAY_TIME)
 
-    return () => {
-      clearInterval(interval)
+      return () => {
+        clearInterval(interval)
+      }
     }
   }, [items.length, slide])
-
   return (
     <div
       className="slider"
@@ -83,12 +105,11 @@ const Slider = function () {
           changeSlide,
           slidesCount: items.length,
           slideNumber: slide,
-          items,
         }}
       >
         <Arrows />
         <div className="window">
-          <SliderList />
+          {items.length ? <Slide id={slide} animation={animation} /> : null}
         </div>
         <Dots />
       </SliderContext.Provider>

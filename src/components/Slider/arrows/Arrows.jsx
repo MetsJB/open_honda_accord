@@ -3,7 +3,7 @@ import { SliderContext } from "../Slider"
 import { FaChevronRight, FaChevronLeft } from "react-icons/fa"
 
 const Arrows = () => {
-  const { changeSlide } = useContext(SliderContext)
+  const { changeSlide, setAnimation } = useContext(SliderContext)
 
   return (
     <div className="arrows">

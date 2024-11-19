@@ -1,4 +1,4 @@
-import React from "react"
+import { Link } from "react-router-dom"
 import { useState, useLayoutEffect } from "react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/all"
@@ -119,10 +119,13 @@ const Main = () => {
       <div className={styles.nodes}>
         <h2 className="nodes">Узлы и агрегаты</h2>
         <ul className={styles.ul}>
-          <a className={`${styles.item_1} ${styles.item}`}>
-            <div className={`${styles.photo_1} ${styles.photo}`}></div>
+          <Link to="/engine" className={`${styles.item_1} ${styles.item}`}>
+            <div
+              to="/engine"
+              className={`${styles.photo_1} ${styles.photo}`}
+            ></div>
             <p className={styles.paragraph}>двигатель</p>
-          </a>
+          </Link>
           <a className={`${styles.item_2} ${styles.item}`}>
             <div className={`${styles.photo_2} ${styles.photo}`}></div>
             <p className={styles.paragraph}>кузов</p>

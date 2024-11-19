@@ -79,18 +79,18 @@
   will-change: transform;
 }
 .layer_1 {
-  background-image: url("../../../public/images/layer-1.png");
+  background-image: url("./../../images/layer-1.png");
   position: absolute;
   z-index: -1;
   will-change: transform;
 }
 .layer_2 {
-  background-image: url("../../../public/images/layer-2.png");
+  background-image: url("./../../images/layer-2.png");
   position: absolute;
   z-index: 1;
 }
 .layer_3 {
-  background-image: url("../../../public/images/layer-3.png");
+  background-image: url("./../../images/layer-3.png");
   position: absolute;
   z-index: 2;
   will-change: animation;
@@ -118,18 +118,19 @@
   background-position: center;
   background-repeat: no-repeat;
   color: var(--color-text);
+  border: none;
 }
 .photo_1 {
-  background-image: url("../../../public/images/БФдвигатель.png");
+  background-image: url('./../../images/БФдвигатель.png');
 }
 .photo_2 {
-  background-image: url("../../../public/images/БФкузов.png");
+  background-image: url("./../../images/БФкузов.png");
 }
 .photo_3 {
-  background-image: url("../../../public/images/БФподвеска.png");
+  background-image: url("./../../images/БФподвеска.png");
 }
 .photo_4 {
-  background-image: url("../../../public/images/БФсалон.png");
+  background-image: url("./../../images/БФсалон.png");
   width: 455px;
   height: 290px;
   position: absolute;
@@ -172,21 +173,21 @@
   background-color: #2584ff;
   transition: background-color 0.03s ease-in-out;
 }
-.item > p {
+.item > .paragraph {
   transition: all 0.5s ease-in-out;
 }
-.item:hover > p {
+.item:hover > .paragraph {
   transform: translate(-50%, -50%) scale(1.2);
   opacity: 1;
 }
-.item > div {
+.item > .photo {
   transition: all 0.5s ease-in-out;
 }
-.item:hover > div {
+.item:hover > .photo {
   filter: blur(3px);
   transform: scale(0.88);
 }
-.item_4:hover > div {
+.item_4:hover > .photo {
   filter: blur(2px);
   transform: translate(-50%, -50%) scale(0.88);
 }

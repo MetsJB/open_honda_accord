@@ -14,7 +14,7 @@ const Header = () => {
           Узлы и агрегаты ▾
           <ul className={styles.nodes}>
             <div className={styles.nodes__wrapper}>
-              <Link className={styles.nodes_anchor}>Двигатель</Link>
+              <Link to='/engine' className={styles.nodes_anchor}>Двигатель</Link>
               <Link className={styles.nodes_anchor}>Кузов</Link>
               <Link className={styles.nodes_anchor}>Подвеска</Link>
               <Link className={styles.nodes_anchor}>Салон</Link>
