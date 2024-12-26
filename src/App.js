@@ -1,7 +1,13 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import Home from "./pages/Home.jsx"
-import Photo from "./pages/Photo.jsx"
-import Engine from "./pages/Engine.jsx"
+import Main from "./components/Main/Main.jsx"
+import Slider from "./components/Slider/Slider.jsx"
+import Engine from "./components/Engine/Engine.jsx"
+import Pendant from "./components/Pendant/Pendant.jsx"
+import CarBody from "./components/CarBody/CarBody.jsx"
+import Interior from "./components/Interior/Interior.jsx"
+import Reviews from "./components/Reviews/Reviews.jsx"
+import MainLayouts from "./layouts/MainLayouts.jsx"
+
 import "./App.css"
 
 function App() {
@@ -9,9 +15,15 @@ function App() {
     <div className="app">
       <BrowserRouter>
         <Routes>
-          <Route element={<Home />} path="/" />
-          <Route element={<Photo />} path="/photo" />
-          <Route element={<Engine />} path="/engine" />
+          <Route path="/" element={<MainLayouts />}>
+            <Route index element={<Main />} />
+            <Route path="/photo" element={<Slider />} />
+            <Route path="/engine" element={<Engine />} />
+            <Route path="/pendant" element={<Pendant />} />
+            <Route path="/carbody" element={<CarBody />} />
+            <Route path="/interior" element={<Interior />} />
+            <Route path="/reviews" element={<Reviews />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </div>

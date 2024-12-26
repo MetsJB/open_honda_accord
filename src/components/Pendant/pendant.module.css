@@ -1,0 +1,25 @@
+.container {
+  padding: 50px 0;
+  width: 100%;
+  min-height: max-content;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+.paragraphs p {
+  text-indent: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+  color: var(--color-text);
+}
+.background {
+  background-position: top;
+  width: 1000px;
+  height: 550px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 15px;
+}

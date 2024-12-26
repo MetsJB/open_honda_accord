@@ -1,6 +1,6 @@
 .main {
   position: relative;
-  width: 99vw;
+  width: 100%;
   will-change: auto;
 }
 .h1 {
@@ -57,7 +57,7 @@
 }
 .layers {
   position: relative;
-  width: 99vw;
+  width: 100%;
   min-height: 860px;
   overflow: hidden;
   box-shadow: 0 8px 20px -3px rgba(145, 145, 145, 0.8);
@@ -76,7 +76,6 @@
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: cover;
-  will-change: transform;
 }
 .layer_1 {
   background-image: url("./../../images/layer-1.png");
@@ -121,7 +120,7 @@
   border: none;
 }
 .photo_1 {
-  background-image: url('./../../images/БФдвигатель.png');
+  background-image: url("./../../images/БФдвигатель.png");
 }
 .photo_2 {
   background-image: url("./../../images/БФкузов.png");

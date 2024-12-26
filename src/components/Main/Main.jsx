@@ -83,26 +83,25 @@ const Main = () => {
   }, [])
 
   const [state, setState] = useState(window.scrollY)
-  const handleScroll = () => {
+  window.addEventListener("scroll", () => {
     setState(window.scrollY)
-  }
-  window.addEventListener("scroll", handleScroll)
+  })
   return (
     <main className={styles.main}>
       <section className={styles.layers}>
         <div className={styles.layers__container}>
           <div
-            className={`${styles.layers__item} ${styles.layer_1}`}
+            className={`layers__item ${styles.layers__item} ${styles.layer_1}`}
             style={{
               transform: `translate3d(0, ${state / 1.55}px, 0)`,
             }}
           ></div>
           <div className={`${styles.layers__item} ${styles.layer_2}`}></div>
           <div className={`${styles.layers__item} ${styles.layer_3}`}></div>
-          <div className="layers__item layer-4">
+          <div className="layer-4">
             <div className="hero-content">
               <h1
-                className={styles.h1}
+                className={`h1 ${styles.h1}`}
                 style={{
                   transform: `translate3d(0, ${state / 2.1}px, 0)`,
                 }}
@@ -111,33 +110,27 @@ const Main = () => {
               </h1>
             </div>
           </div>
-          <div className="layers__item layer-5">
-            <canvas className="rain"></canvas>
-          </div>
         </div>
       </section>
       <div className={styles.nodes}>
         <h2 className="nodes">Узлы и агрегаты</h2>
         <ul className={styles.ul}>
-          <Link to="/engine" className={`${styles.item_1} ${styles.item}`}>
-            <div
-              to="/engine"
-              className={`${styles.photo_1} ${styles.photo}`}
-            ></div>
+          <Link to="engine" className={`${styles.item_1} ${styles.item}`}>
+            <div className={`${styles.photo_1} ${styles.photo}`}></div>
             <p className={styles.paragraph}>двигатель</p>
           </Link>
-          <a className={`${styles.item_2} ${styles.item}`}>
+          <Link to="carbody" className={`${styles.item_2} ${styles.item}`}>
             <div className={`${styles.photo_2} ${styles.photo}`}></div>
             <p className={styles.paragraph}>кузов</p>
-          </a>
-          <a className={`${styles.item_3} ${styles.item}`}>
+          </Link>
+          <Link to="pendant" className={`${styles.item_3} ${styles.item}`}>
             <div className={`${styles.photo_3} ${styles.photo}`}></div>
             <p className={styles.paragraph}>подвеска</p>
-          </a>
-          <a className={`${styles.item_4} ${styles.item}`}>
+          </Link>
+          <Link to="interior" className={`${styles.item_4} ${styles.item}`}>
             <div className={`${styles.photo_4} ${styles.photo}`}></div>
             <p className={styles.paragraph}>салон</p>
-          </a>
+          </Link>
         </ul>
       </div>
       <div className={styles.description}>

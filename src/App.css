@@ -7,6 +7,12 @@
   --color-text-gold: #e68d37;
   --color-text-bg: #3773f4;
 }
+
+html {
+  /* width: 1536px; */
+  max-width: 1536px;
+}
+
 /* #fcc289 */
 @font-face {
   font-family: "TTFirsNeue-Regular";
@@ -24,21 +30,31 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "TTFirsNeue-Regular";
 }
 
 body {
-  width: 100%;
+  overflow-x: hidden;
+  width: 100vw;
+  min-height: 100vh;
   margin: 0 auto;
-  height: 100vh;
   background: linear-gradient(90deg, #484c56, #373a40, #22242a);
-  font-family: "TTFirsNeue-Regular";
-}
-.name {
-  /* background-image: url("./../public/images/pngwing.png"); */
 }
 a,
 ul,
 ol {
   text-decoration: none;
   list-style-type: none;
+}
+.app {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.h1,
+.layers__item {
+  will-change: scroll-position;
 }
