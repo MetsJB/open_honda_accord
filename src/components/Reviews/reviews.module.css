@@ -98,9 +98,9 @@
   }
 
   .dot {
+    position: absolute;
     opacity: 0;
     top: 17px;
-    position: absolute;
     width: 10px;
     height: 10px;
     border: 2px solid var(--color-text);

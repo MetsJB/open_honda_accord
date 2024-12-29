@@ -1,7 +1,7 @@
 import { useState, useEffect, createContext } from "react"
-import Arrows from "./Arrows/Arrows"
-import Slide from "./Slide/Slide"
-import Dots from "./Dots/Dots"
+import Arrows from "./arrows/Arrows"
+import Slide from "./slide/Slide"
+import Dots from "./dots/Dots"
 import getImages from "./images"
 import "./Slider.css"
 

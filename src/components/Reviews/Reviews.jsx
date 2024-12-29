@@ -1,8 +1,9 @@
 import { FaUser, FaEdit } from "react-icons/fa"
 import style from "./reviews.module.css"
 import { VscFeedback } from "react-icons/vsc"
-import ModalWindow from "../ModalWindow/ModalWindow"
+import ModalWindow from "../modalWindow/ModalWindow"
 import { useEffect, useState, version } from "react"
+import handlePopupMessage from "../../utils/handlePopupMessage"
 
 const Reviews = () => {
   const [comments, setComments] = useState([])
@@ -15,7 +16,9 @@ const Reviews = () => {
       .then((data) => {
         setComments(data)
       })
-      .catch((err) => console.log(err))
+      .catch((err) => {
+        console.log(err)
+      })
 
     subscribe()
   }, [])
@@ -56,7 +59,9 @@ const Reviews = () => {
             <ul className={style.listComment}>
               {comments.map((item, index) => (
                 <li className={style.itemComment} key={index}>
-                  <p className={style.indexNumber}>{++index}.</p>
+                  <p className={style.indexNumber} id={item.id}>
+                    {++index}.
+                  </p>
                   <div className={style.comment}>
                     <p className={style.nameComment}>{item.name}</p>
                     {item.message}

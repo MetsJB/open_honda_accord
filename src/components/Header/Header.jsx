@@ -1,25 +1,23 @@
 import { useState } from "react"
 import { Link, useLocation } from "react-router-dom"
 import style from "./header.module.css"
-import MLC from "./android-chrome-512x512.png"
-import ModalWindow from "../ModalWindow/ModalWindow"
+import honda_label from "./honda_label.svg"
+import ModalWindow from "../modalWindow/ModalWindow"
 
 const Header = () => {
   const [dropDownMenu, setDropDownMenu] = useState(false)
   const [modalActive, setModalActive] = useState(false)
 
-  if(modalActive) {
-    document.body.style.overflow = 'hidden'
+  if (modalActive) {
+    document.body.style.overflow = "hidden"
   } else {
-    document.body.style.overflow = ''
+    document.body.style.overflow = ""
   }
-
-  console.log(modalActive)
 
   return (
     <>
       <header className={style.header}>
-        <img src={MLC} />
+        <img src={honda_label} />
         <div className={style.header_anchor}>
           <Link to=".">Главная</Link>
           <Link to="photo">Фото</Link>
@@ -93,7 +91,7 @@ const Header = () => {
           </div>
         </div>
       </header>
-      <ModalWindow modalActive={modalActive} setModalActive={setModalActive}/>
+      <ModalWindow modalActive={modalActive} setModalActive={setModalActive} />
     </>
   )
 }

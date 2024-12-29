@@ -22,11 +22,21 @@ const ModalWindow = ({ modalActive, setModalActive }) => {
     })
       .then((responce) => responce.text())
       .then((data) => {
-        data === "No change"
-          ? handlePopupMessage(name, "вы уже оставили такое сообщение!")
-          : handlePopupMessage(name, "ваше сообщение отправлено!")
+        if (data === "No change") {
+          handlePopupMessage(name, "вы уже оставили такое сообщение!")
+          setMessage("")
+        } else {
+          handlePopupMessage(name, "ваше сообщение отправлено!")
+          setMessage("")
+          setName("")
+        }
       })
-      .catch((e) => console.log(e))
+      .catch((e) =>
+        handlePopupMessage(
+          "Сообщение не отправлено",
+          "отсутствует связь с сервером"
+        )
+      )
   }
 
   return createPortal(
