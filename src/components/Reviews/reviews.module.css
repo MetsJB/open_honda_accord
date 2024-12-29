@@ -126,6 +126,9 @@
     animation-name: dotThree;
   }
 }
+.dot {
+  position: absolute;
+}
 
 @keyframes dotOne {
   5% {
