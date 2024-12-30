@@ -1,0 +1,198 @@
+.container {
+  flex-grow: 1;
+  margin: 50px auto;
+  width: 1000px;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 40px;
+  color: var(--color-text);
+
+  h1 {
+    font-size: 60px;
+    font-weight: 500;
+    margin-bottom: 40px;
+  }
+}
+
+.description {
+  align-self: flex-start;
+  font-size: 19px;
+  position: relative;
+  max-width: 50%;
+  p {
+    width: max-content;
+    border-bottom: 1px solid var(--color-text);
+  }
+}
+
+.leaveFeedBack {
+  font-size: 17px;
+}
+
+.reviews {
+  min-height: 150px;
+  padding: 35px 30px;
+  width: 100%;
+  height: max-content;
+  border: 1px solid #88898a;
+  border-radius: 5px;
+  background-color: #65686f;
+  position: relative;
+
+  .zeroComment {
+    width: max-content;
+    position: absolute;
+    margin-inline: auto;
+    inset-inline: 0;
+    inset-block-start: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.nameComment {
+  color: #a39eff;
+  margin-left: 8px;
+  margin-bottom: 10px;
+  font-size: 22px;
+  border-bottom: 1px solid;
+  width: max-content;
+}
+
+.listComment {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.itemComment {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.comment {
+  margin-left: 35px;
+  width: 100%;
+  height: max-content;
+  padding: 15px 25px;
+  background-color: #7d8189;
+  border-radius: 5px;
+}
+
+.indexNumber {
+  position: absolute;
+}
+
+.wrapperFeedBack {
+  position: absolute;
+  top: -30px;
+  left: calc(100% + 120px);
+
+  .feedBack {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+  }
+
+  .dot {
+    position: absolute;
+    opacity: 0;
+    top: 17px;
+    width: 10px;
+    height: 10px;
+    border: 2px solid var(--color-text);
+    border-radius: 50%;
+    animation-duration: 6s;
+    animation-delay: 0.3s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: backwards;
+  }
+
+  .dotOne {
+    left: 43px;
+    animation-name: dotOne;
+  }
+
+  .dotTwo {
+    left: 58px;
+    animation-name: dotTwo;
+  }
+
+  .dotThree {
+    left: 73px;
+    animation-name: dotThree;
+  }
+}
+.dot {
+  position: absolute;
+}
+
+@keyframes dotOne {
+  5% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  45% {
+    background-color: transparent;
+  }
+  50% {
+    background-color: var(--color-text);
+  }
+
+  85% {
+    opacity: 1;
+    background-color: var(--color-text);
+  }
+  90% {
+    opacity: 0;
+  }
+}
+@keyframes dotTwo {
+  10% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  50% {
+    background-color: transparent;
+  }
+  55% {
+    opacity: 1;
+    background-color: var(--color-text);
+  }
+  85% {
+    opacity: 1;
+    background-color: var(--color-text);
+  }
+  90% {
+    opacity: 0;
+  }
+}
+@keyframes dotThree {
+  15% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  55% {
+    background-color: transparent;
+  }
+  60% {
+    opacity: 1;
+    background-color: var(--color-text);
+  }
+  85% {
+    opacity: 1;
+    background-color: var(--color-text);
+  }
+  90% {
+    opacity: 0;
+  }
+}
