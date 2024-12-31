@@ -1,10 +1,11 @@
+require('dotenv').config()
 const express = require("express")
 const cors = require("cors")
 const router = require("./routes/route")
 const controllers = require("./controllers/controller.js")
 
 const PORT = process.env.PORT || 4000
-let connections = process.env.CONNECTIONS || 0
+let connections =  0
 const app = new express()
 
 app.use(cors())
