@@ -13,7 +13,7 @@ const ModalWindow = ({ modalActive, setModalActive }) => {
   async function submitForm(e) {
     e.preventDefault()
 
-    await fetch("http://90.156.157.25:4000/api/post-comment", {
+    await fetch("https://90.156.157.25:4000/api/post-comment", {
       method: "POST",
       body: JSON.stringify({ name, message }),
       headers: {
