@@ -9,7 +9,7 @@ const Reviews = () => {
   const [comments, setComments] = useState([])
 
   useEffect(() => {
-    fetch("http://localhost:4000/api/reviews")
+    fetch("http://90.156.157.25:4000/api/reviews")
       .then((response) => {
         return response.json()
       })
@@ -24,7 +24,7 @@ const Reviews = () => {
   }, [])
 
   const subscribe = async () => {
-    const eventSource = new EventSource("http://localhost:4000/api/connect")
+    const eventSource = new EventSource("http://90.156.157.25:4000/api/connect")
     eventSource.onmessage = (event) => {
       const message = JSON.parse(event.data)
       setComments(message)
